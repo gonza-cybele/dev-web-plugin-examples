@@ -1,0 +1,19 @@
+{
+  "name": "thinfinity-dashboard-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Preact dashboard plugin — demonstrates framework-agnostic plugin system",
+  "type": "module",
+  "scripts": {
+    "install-plugin": "node scripts/install-dev-plugin.js",
+    "dev:plugin": "vite build --config vite.config.plugin.js --watch --mode development",
+    "build:plugin": "vite build --config vite.config.plugin.js"
+  },
+  "dependencies": {
+    "preact": "^10.24.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.9.1",
+    "vite": "^3.0.9"
+  }
+}

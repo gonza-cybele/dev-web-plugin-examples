@@ -1,0 +1,10 @@
+{
+  "name": "thinfinity-vanilla-demo-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vanilla JS plugin — no framework, no build step",
+  "scripts": {
+    "install-plugin": "node scripts/install-dev-plugin.js"
+  }
+}
