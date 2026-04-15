@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync, symlinkSync, rmSync, lstatSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, symlinkSync, rmSync, lstatSync, readlinkSync } from 'fs';
 import { resolve, join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { PLUGIN } from '../pluginconfig.js';
@@ -42,11 +42,17 @@ try {
 
 if (symlinkStat) {
   if (symlinkStat.isSymbolicLink()) {
-    console.log('Symlink already exists:', symlinkPath, '->', targetPath);
-    process.exit(0);
+    const currentTarget = readlinkSync(symlinkPath);
+    if (currentTarget === targetPath) {
+      console.log('Symlink already exists:', symlinkPath, '->', targetPath);
+      process.exit(0);
+    }
+    console.log('Symlink points to old path:', currentTarget, '-> replacing with:', targetPath);
+    rmSync(symlinkPath);
+  } else {
+    rmSync(symlinkPath, { recursive: true });
+    console.log('Removed existing directory:', symlinkPath);
   }
-  rmSync(symlinkPath, { recursive: true });
-  console.log('Removed existing directory:', symlinkPath);
 }
 
 symlinkSync(targetPath, symlinkPath, 'junction');
