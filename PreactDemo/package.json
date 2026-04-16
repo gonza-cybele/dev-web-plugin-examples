@@ -1,8 +1,8 @@
 {
-  "name": "thinfinity-dashboard-plugin",
+  "name": "thinfinity-preact-demo-plugin",
   "version": "1.0.0",
   "private": true,
-  "description": "Preact dashboard plugin — demonstrates framework-agnostic plugin system",
+  "description": "Preact demo plugin — demonstrates framework-agnostic plugin system",
   "type": "module",
   "scripts": {
     "install-plugin": "node scripts/install-dev-plugin.js",

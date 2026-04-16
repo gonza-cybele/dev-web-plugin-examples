@@ -1,0 +1,11 @@
+{
+  "name": "thinfinity-vanilla-server-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vanilla JS plugin — no framework, no build step, served directly on localhost:3333",
+  "scripts": {
+    "install-plugin": "node scripts/install-dev-plugin.js",
+    "dev": "node scripts/dev-server.js"
+  }
+}

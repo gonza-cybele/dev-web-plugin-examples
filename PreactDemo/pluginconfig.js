@@ -1,7 +1,7 @@
 export const PLUGIN = {
-  name: 'dashboard',
+  name: 'preact_demo',
   enabled: true,
-  label: '(P)react Dashboard',
+  label: 'Preact Demo',
   type: 'app',
   target: '',
   icon: 'tws-launch',
